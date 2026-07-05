@@ -1,0 +1,12 @@
+Let, var and const
+Const is used when variables are meant to be constant
+let new variable declaration - block scoped within {}
+var old variable declaration - function scoped (anywhere in the function) [Not recomended]
+
+Null and Undefined
+Null -> empty variable. Intetionally set a variable empty
+Undefined -> variable is declared but not defined
+
+Undefined is a datatype but Null is an object
+typeof(undefined) -> undefind
+typeof(null) -> object
