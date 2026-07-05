@@ -29,7 +29,11 @@ Data type => primitive and non primitive
              String        Objects
              Boolean       Functions
              null          Pass by reference
-             undefined
+             undefined     Heap memory
              symbol
              bigInt
-             pass by value  
+             pass by value
+             Stack memory  
+
+Stack and Heap memory
+copy      Reference
