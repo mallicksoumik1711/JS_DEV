@@ -37,3 +37,7 @@ Data type => primitive and non primitive
 
 Stack and Heap memory
 copy      Reference
+
+Strings => 
+const str = new String("Hello") 
+.split => changes into array
