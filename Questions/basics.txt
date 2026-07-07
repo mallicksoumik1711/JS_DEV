@@ -1,30 +1,30 @@
-Let, var and const
-Const is used when variables are meant to be constant
-let new variable declaration - block scoped within {}
-var old variable declaration - function scoped (anywhere in the function) [Not recomended]
+1. Let, var and const
+   Const is used when variables are meant to be constant
+   let new variable declaration - block scoped within {}
+   var old variable declaration - function scoped (anywhere in the function) [Not recomended]
 
-Null and Undefined
-Null -> empty variable. Intetionally set a variable empty
-Undefined -> variable is declared but not defined
+2. Null and Undefined
+   Null -> empty variable. Intetionally set a variable empty
+   Undefined -> variable is declared but not defined
 
-Undefined is a datatype but Null is an object
-typeof(undefined) -> undefind
-typeof(null) -> object
+3. Undefined is a datatype but Null is an object
+   typeof(undefined) -> undefind
+   typeof(null) -> object
 
-Equality check (==) and comparisions (<, >, <=, >=) works differently
-null == 0 => false. it checks value 
-null === 0 => false. it checks value and datatype
-null>=0 || null<=0 || null>0 || null<0 
-true       true       false     false
-Comparisions converts null into 0. Now do that math :)
+4. Equality check (==) and comparisions (<, >, <=, >=) works differently
+   null == 0 => false. it checks value 
+   null === 0 => false. it checks value and datatype
+   null>=0 || null<=0 || null>0 || null<0 
+   true       true       false     false
+   Comparisions converts null into 0. Now do that math :)
 
-== and === difference
-== => checks just value
-"2" == 2 => true. checks only value
-=== => checks value and datatype
-"2" === 2 => false. datatype check
+5. == and === difference
+   == => checks just value
+   "2" == 2 => true. checks only value
+   === => checks value and datatype
+   "2" === 2 => false. datatype check
 
-Data type => primitive and non primitive
+6. Data type => primitive and non primitive
              Number        Arrays
              String        Objects
              Boolean       Functions
@@ -35,9 +35,15 @@ Data type => primitive and non primitive
              pass by value
              Stack memory  
 
-Stack and Heap memory
-copy      Reference
+7. Stack and Heap memory
+   copy      Reference
 
-Strings => 
-const str = new String("Hello") 
-.split => changes into array
+8. Strings => 
+   const str = new String("Hello") 
+   .split => changes into array
+
+10. Difference between datatype and Object (number and Number)
+    Both are same 
+    number directlty points to a value
+    Number points to object of Number: 5
+    Number is used as it provides mostly functions lie MAX_VALUE, MIN_VALUE etc
