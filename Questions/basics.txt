@@ -47,3 +47,15 @@
     number directlty points to a value
     Number points to object of Number: 5
     Number is used as it provides mostly functions lie MAX_VALUE, MIN_VALUE etc
+
+11. Date => typeof -> object
+    const dateObj = new Date()
+    dateObj.toDateString() => readable date
+
+12. Time stamps 
+    const time = Date.now()
+    typeof time => number
+
+13. Converting into seconds
+    const inSeconds = Date.now() / 1000
+    Math.floor(inSeconds) => removes extra decimals
