@@ -10,6 +10,6 @@ if(true){
 }
 
 console.log(a); 
-console.log(b); //gives error
+// console.log(b); //gives error
 
 
