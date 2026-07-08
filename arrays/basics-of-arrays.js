@@ -19,7 +19,7 @@ const arr1 = [1,2,3,4,5,6,7,8]
 //     original array = 1,5
 
 
-// Concat and spread operator
+// Concat and spread operator => used to join array
 const num1 = [1,2,3,4,5]
 const num2 = [6,7,8,9,10]
 
