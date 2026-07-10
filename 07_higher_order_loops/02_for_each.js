@@ -47,3 +47,6 @@ const laptops = [
 laptops.forEach( (items) => {
     console.log(`Id: ${items.id}, model: ${items.name}`)
 } )
+
+// in foreach we cannot return any values
+// or we cannot store it in variables
