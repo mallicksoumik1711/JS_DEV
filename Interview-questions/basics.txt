@@ -17,6 +17,8 @@
    null>=0 || null<=0 || null>0 || null<0 
    true       true       false     false
    Comparisions converts null into 0. Now do that math :)
+   "2" > 1    true, it converts the string into number
+   "02" > 1   true    
 
 5. == and === difference
    == => checks just value
