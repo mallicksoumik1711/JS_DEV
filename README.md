@@ -27,3 +27,60 @@
                   console.log(a)
             }
             console.log(a)          reference error
+
+## 2. can const object be modified?
+      yes actually, const prevents from readssigning the variable.
+      But won't make the object immutable.
+      ex :- const user = {
+                  num: 10
+            }
+            user.num = 100          allowed
+
+## 3. redeclaration is allowed in let, var, const
+      var           => allowed
+      ex:-          var a = 10
+                    var a = 100
+                    
+      let and const => not allowed
+      ex :-         let a = 10 && const a = 10      Not allowed
+                    let a = 100 && const a = 100    Not allowed
+
+## 4. reference datatype
+      - stores the reference (memory address) instead of value
+      - object, arrays, functions
+
+## 5. Null               &               Undefined
+      - intentional empty value          - variable declared but not assigned
+      - assigned by user                 - assigned by js
+      - typeof null => object            - typeof undefined => undefined
+
+## 6. Why typeof Null is object
+      - in every language, code is identified as binary
+      - in js as well developers denoted every piece of code as 32 bit binary 
+      - in those 32 bits, last 3 bits were assigned for datatype
+      - 001 => number, 010 => string like this
+      - for null since its completely blank, they decided 000
+      - but 000 was already there for object
+      - thus typeof null became object
+      quite a story innit :)
+
+## 7. Stack and Heap memory
+      stack => primitive values
+               stores the copy
+
+      Heap => object, array, function
+              stores the reference of memory address
+
+## 8. Implicit and Explicit conversion
+      Implicit => js automatically converts
+                  console.log("5" + 2)     52
+                  console.log("5" - 2)     3  string is converted into number
+
+      Explicit => user manually converts them
+                  Number(100)       100
+                  Boolean(1)        true
+                  Number(100abc)    NaN
+                  String(100)       "100"
+                  Boolean("")       false
+                  Boolean("false")  true
+                  Boolean("0")      true
