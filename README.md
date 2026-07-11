@@ -84,3 +84,25 @@
                   Boolean("")       false
                   Boolean("false")  true
                   Boolean("0")      true
+
+## 9. Function Declaration & Function Expression
+      Declaration => completely Hoisted
+                     can be called before its defination
+                     
+                     greet()
+                     function greet(){
+                           console.log("Greeting')
+                     }
+
+      Expression => hoisted but its value is not initilized till assignment
+                    cannot call before function declaration
+
+                    greet()                         Not allowed
+                    const greet = function () {
+                          console.log("Greeting")      
+                    }
+
+## 10. Arrow function doesn't have their own this
+       - like regular functions, these dont have their own this
+       - they inherit "this" from their surrounding (node env) or whereever the code is
+       
