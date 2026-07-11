@@ -2,4 +2,4 @@
 
 # Theory Questions
 
-1. Difference bt var, let, const
+## 1. Difference bt var, let, const
