@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create element</title>
+</head>
+<body style="background-color: black; color: white; padding: 20px;">
+    <div class="parent">
+        <div class="week">Mon</div>
+        <div class="week">Tue</div>
+        <div class="week">Wed</div>
+        <div class="week">Thur</div>
+        <div class="week">Fri</div>
+        <div class="week">Sat</div>
+        <div class="week">Sun</div>
+    </div>
+</body>
+
+<script>
+    const parentElement = document.querySelector(".parent")
+    // console.log(parentElement);
+    
+    // console.log(parentElement.children)           //gives html collection  
+    // HTMLCollection(7) [div.week, div.week, div.week, div.week, div.week, div.week, div.week]
+
+    // console.log(parentElement.children[3])    
+    // <div class="week">Thur</div>
+    
+    // console.log(parentElement.children[3].innerHTML)    // gives value of that
+
+    for(let i=0; i<parentElement.children.length; i++){
+        // console.log(parentElement.children[i].innerHTML)
+    }
+
+    // firstElementChild
+    // console.log(parentElement.firstElementChild)
+
+    // lastElementChild
+    // console.log(parentElement.lastElementChild)
+
+    // child -> parent
+    const dayOne = document.querySelector(".week")
+    // console.log(dayOne)
+    // console.log(dayOne.parentElement)
+    // console.log(dayOne.nextElementSibling)  //tuesday
+
+    // console.log(parentElement.childNodes)  //entire tree structure. even enter, div, class, ids etc
+
+    
+
+</script>
+
+</html>

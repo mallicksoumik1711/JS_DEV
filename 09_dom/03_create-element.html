@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: black; color: white; padding: 20px;">
+    
+</body>
+
+<script>
+
+    const div = document.createElement("div")
+    console.log(div)
+
+    div.className = "container"
+    div.id = "main-div"
+
+    div.setAttribute("class", "container another-class")
+
+    div.style.backgroundColor = "red"
+    div.style.padding = "20px"
+
+    // add text in div
+    // innerHTML/innerText/textContent
+    div.innerHTML = "This is text added by inner html"
+    div.innerText = "added by innerText"
+    div.textContent = "added by text content"
+
+    // createTextNode and appendChild
+    const text = document.createTextNode("This is added by text node")
+    div.appendChild(text)
+
+    // div.createTextNode => not giving option to add text
+
+    // till now all you can see in console not in the browser(page)
+    // add in browser (page)
+    document.body.appendChild(div)
+
+</script>
+
+</html>
