@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Learning</title>
+</head>
+<body style="background-color: black;">
+    <div class="container" style="color: white;">
+        <h1 class="heading" id="main-heading">This is heading for main section. <span style="display: none;"> This is added text </span> </h1>
+
+        <p class="para" id="description1">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <p class="para" id="description2">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <p class="para" id="description3">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    </div>
+</body>
+</html>
+
+
+
+
+
+<!-- DOM -->
+<!-- 
+    1. getElementById
+       document.getElementById("main-heading")
+       this returns the whole html with id = "main-heading"
+
+    2. const mainHeading = document.getElementById("main-heading")
+       this mainHeading will also return now the whole html with id = "main-heading"
+       mainHeading.id => main-heading
+       mainHeading.class => error. It should be className
+       mainHeading.getAttribute("id")/("class")
+       mainHeading.setAttribute("class", "test") => here the class="heading" will be overrided by class="test"
+       so in setAttribute we need to give both the class/id when setting if we want previous one as well
+
+        mainHeading.id
+        'main-heading'
+
+        mainHeading.className
+        'heading'
+
+        mainHeading.getAttribute("id")
+        'main-heading'
+
+        mainHeading.getAttribute("class")
+        'heading'
+
+        mainHeading.setAttribute("class", "changed-heading")
+        undefined
+
+        mainHeading.setAttribute("class", "changed-heading heading")
+        undefined
+
+        mainHeading.style.color = "green"
+        'green'
+
+        mainHeading.style.margin = "15px"
+        '15px'
+
+    3. innerHTML, innerText, textContent
+       <h1 class="heading" id="main-heading">This is heading for main section <span style="display: none;"> This is added text </span> </h1>
+
+        mainHeading.innerText
+        'This is heading for main section.'
+
+        mainHeading.textContent
+        'This is heading for main section.  This is added text  '
+
+        mainHeading.innerHTML
+        'This is heading for main section. <span style="display: none;"> This is added text </span> '
+
+    4. querySelector => gives the access to the first element
+       not all the elements
+
+       document.querySelector('p')
+       <p class="para" id="description1">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+       gives the first para
+
+       document.querySelectorAll("p") ======> returns a nodelist. different from array
+
+        NodeList(3) [p#description1.para, p#description2.para, p#description3.para]
+        0: p#description1.para
+        1: #description2.para
+        2: p#description3.para
+        length: 3
+
+        const paras = document.querySelectorAll("p")
+        undefined
+
+        paras.forEach( (items) => {
+            items.style.color = "green"
+        } )
+
+        paras[2].style.color = "blue"
+        'blue'
+        paras[1].style.color = "red"
+        'red'
+       
+    5. getElementByClassName("para")
+        const paras = document.getElementsByClassName("para")  ====> returns a htmlcollection
+        undefined
+        paras
+        HTMLCollection(3) [p#description1.para, p#description2.para, p#description3.para, description1: p#description1.para, description2: p#description2.para, description3: p#description3.para]
+        0: p#description1.para
+        1: p#description2.para
+        2: p#description3.para
+        description1: p#description1.para
+        description2: p#description2.para
+        description3: p#description3.para
+
+        change this htmlcollection into array 
+
+        Array.from(paras)
+        (3) [p#description1.para, p#description2.para, p#description3.para]0: p#description1.para1: p#description2.para2: p#description3.paralength: 3[[Prototype]]: Array(0)
+
+        const arr = Array.from(paras)
+        undefined
+
+        arr
+        (3) [p#description1.para, p#description2.para, p#description3.para]
+
+        arr.map( (items) => {
+            items.style.color = "red"
+        } )
+
+        (3) [undefined, undefined, undefined]
+
+        arr.map( (items) => {
+            items.innerHTML = "red"
+        } )
+            
+        (3) [undefined, undefined, undefined]
+-->
