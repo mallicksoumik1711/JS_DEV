@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: black; color: white;">
+    
+</body>
+
+<script>
+
+    const container = document.createElement('div')
+    console.log(container);
+    
+    const ulList = document.createElement("ul")
+    // console.log(ulList)
+
+    container.setAttribute("class", "container")
+    ulList.setAttribute("class", "lists")
+    container.appendChild(ulList)
+
+    function addList(items){
+        const textNode = document.createElement("li")
+        textNode.setAttribute("class", "list")
+        // textNode.innerHTML = items               //Not optimised way
+        textNode.appendChild(document.createTextNode(items))
+        ulList.appendChild(textNode)
+    }
+    addList("javascript")
+    addList("typescript")
+    addList("cpp")
+    addList("ruby")
+
+    document.body.appendChild(container)
+
+    // edit values
+
+    const firstList = document.querySelector('li')
+    firstList.textContent = "Java"
+
+    const secList = document.querySelector("li:nth-child(2)")
+    secList.textContent = "Changed value"
+
+    // better way is create a new list node and append that one.
+    // check the syntax though :)
+
+    // remove
+    const removedelement = document.querySelector("li:nth-child(3)")
+    removedelement.remove()
+
+</script>
+
+</html>
