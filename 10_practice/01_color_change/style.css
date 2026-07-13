@@ -1,0 +1,75 @@
+body{
+    background-color: black;
+    color: white;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.heading{
+    text-align: center;
+    color: white;
+}
+
+.box-colors{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.boxes{
+    border: 2px solid black;
+}
+
+#red{
+    height: 100px;
+    width: 100px;
+    background-color: red;
+}
+
+#blue{
+    height: 100px;
+    width: 100px;
+    background-color: blue;
+}
+
+#green{
+    height: 100px;
+    width: 100px;
+    background-color: green;
+}
+
+#orange{
+    height: 100px;
+    width: 100px;
+    background-color: orange;
+}
+
+#pink{
+    height: 100px;
+    width: 100px;
+    background-color: pink;
+}
+
+#maroon{
+    height: 100px;
+    width: 100px;
+    background-color: maroon;
+}
+
+.boxes:hover{
+    cursor: pointer;
+}
+
+.reset{
+    padding: 12px 20px;
+    width: 300px;
+    background-color: ivory;
+    border-radius: 20px;
+    cursor: pointer;
+}
