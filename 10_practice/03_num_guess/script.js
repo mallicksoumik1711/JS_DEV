@@ -29,7 +29,7 @@ form.addEventListener("submit", (e) => {
     currGuess += 1
     totalGuesses -= 1
 
-    if(totalGuesses < 0){
+    if (totalGuesses < 0) {
         instructions.innerHTML = `Sorry you've hit the total guessing limit. Please refresh and try again. The number was ${randomNumber}`
         return
     }
