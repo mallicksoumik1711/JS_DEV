@@ -1,0 +1,42 @@
+body{
+    background-color: #212121;
+    color: #fff;
+}
+
+.heading{
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.label{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.input{
+    width: 310px;
+    padding: 12px 20px;
+}
+
+.button{
+    width: 355px;
+    padding: 12px 20px;
+}
+
+.instructions{
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-top: 30px;
+}
+
+.prev-guess{
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-top: 20px;
+}
