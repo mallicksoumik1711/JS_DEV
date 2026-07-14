@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <div class="container">
+
+        <ul class="ul-list">
+            <li class="lists" id="one" style="padding: 12px 20px; background-color: #818181; margin: 5px; width: 300px;">List 1</li>
+            <li class="lists" id="two" style="padding: 12px 20px; background-color: #818181; margin: 5px; width: 300px;">List 2</li>
+            <li class="lists" id="three" style="padding: 12px 20px; background-color: #818181; margin: 5px; width: 300px;">List 3</li>
+            <li class="lists" id="four" style="padding: 12px 20px; background-color: #818181; margin: 5px; width: 300px;">List 4</li>
+            <li class="lists" id="five" style="padding: 12px 20px; background-color: #818181; margin: 5px; width: 300px;">List 5</li>
+            <li class="lists" id="six" style="padding: 12px 20px; background-color: #818181; margin: 5px; width: 300px;">List 6</li>
+            <a href="https://www.google.com/" id="link" style="color: #fff;">Google</a>
+        </ul>
+
+    </div>
+</body>
+
+<script>
+
+    // events -> sequentially running but few exceptions
+
+    // This approach is not usually used. depreciated old whatever.
+    // document.getElementById('one').onclick = () => {
+    //     alert("clicked one list")
+    // }
+
+    const one = document.getElementById('one')
+    one.addEventListener('click', (e) => {
+        // alert("One clicked")
+        // console.log(e)
+    }, false)                                    
+    // third parameter is default false
+    // give or dont give doesnt matter (when false) when true its mandatory to write
+
+    // type, timestamp, preventdefault, target, toElement, srcElement, currentTarget, clientX, clientY, screenX, screenY
+    // alt, ctrl, shift, key
+
+    // --------------------------------------------------------------------------------------------------------------------------------
+
+    // in event listener => third parameter is "Event propogation" -------------------------------------------------------------------> IMPORTANT
+    // event propogation -> event bubbling  (false)
+    //                   -> event capturing (true)
+
+    const ul = document.querySelector('.ul-list')
+    ul.addEventListener('click', (e)=>{
+        // console.log("clicked inside Ul list")
+    }, false)
+
+    const li1 = document.getElementById('one')
+    li1.addEventListener('click', (e)=>{
+        // console.log("clicked inside Li one")
+        // e.stopPropagation()
+    }, false)
+
+    // ul => click anywhere in ul
+    // li => li is inside ul so li one will print then ul list
+
+    // event bubbling (false) => data flows from child level to parent level
+    // event capturing (true) => parent to child
+
+    // stop event propogation => e.stopPropogation()
+    // this wont work when true event capturing
+
+    const link = document.getElementById('link')
+    link.addEventListener('click', (e) => {
+        e.preventDefault()
+        // console.log("Prevented on going to google")
+    }, false)
+
+    // when true event capturing e.preventDefault wont work
+
+
+
+
+
+    const unordList = document.querySelector('.un-list')
+    unordList.addEventListener('click', (e) => {
+        
+    }, false)
+
+</script>
+
+</html>
