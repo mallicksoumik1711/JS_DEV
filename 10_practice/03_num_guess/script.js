@@ -1,6 +1,7 @@
 const randomNumber = Math.floor(Math.random() * 100 + 1)
 // console.log(randomNumber);
 
+const setTotal = 10
 let totalGuesses = 10
 let currGuess = 0
 
@@ -16,15 +17,22 @@ const form = document.querySelector("form")
 form.addEventListener("submit", (e) => {
     e.preventDefault()
 
-    const input = parseInt(document.querySelector(".input").value)
+    // const input = parseInt(document.querySelector(".input").value)  //3abcv was converting into 3
+    const input = Number(document.querySelector(".input").value)
     // console.log(input)
 
     if (input === "" || isNaN(input) || input <= 0 || input > 100) {
         instructions.innerHTML = `Please enter a valid number. your number is ${input}`
+        return
     }
 
     currGuess += 1
     totalGuesses -= 1
+
+    if(totalGuesses < 0){
+        instructions.innerHTML = `Sorry you've hit the total guessing limit. Please refresh and try again. The number was ${randomNumber}`
+        return
+    }
 
     if (input === randomNumber) {
         instructions.innerHTML = `Congratulations!! you've guessed it right in ${currGuess} guesses.`
