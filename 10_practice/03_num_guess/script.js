@@ -17,8 +17,8 @@ const form = document.querySelector("form")
 form.addEventListener("submit", (e) => {
     e.preventDefault()
 
-    // const input = parseInt(document.querySelector(".input").value)  //3abcv was converting into 3
-    const input = Number(document.querySelector(".input").value)
+    const input = parseInt(document.querySelector(".input").value)  //3abcv was converting into 3
+    // const input = Number(document.querySelector(".input").value)  //empty input is converting into 0
     // console.log(input)
 
     if (input === "" || isNaN(input) || input <= 0 || input > 100) {
