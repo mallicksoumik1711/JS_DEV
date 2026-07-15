@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <h1 class="heading">Press any key for knowing</h1>
+    <div class="keys"></div>
+</body>
+
+<script>
+    const key = document.querySelector('.keys')
+    const arr = []
+
+    window.addEventListener('keydown', (e) => {
+        arr.push(e.key)
+        arr.push(e.code)
+        arr.push(e.keyCode)
+
+        key.innerHTML = arr
+    }, false)
+</script>
+
+</html>
