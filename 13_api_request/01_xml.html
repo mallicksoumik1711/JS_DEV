@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XML Http request</title>
+</head>
+
+<body style="background-color: #212121; color: #fff; font-family: Verdana, Geneva, Tahoma, sans-serif;">
+    <div class="container">
+        <h1 class="heading" style="text-align: center;">Here the details of user will be present in github url</h1>
+        <div class="card" style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
+            <img src="" alt="" class="image">
+            <span class="text"></span>
+        </div>
+        <div class="btn" style="display: flex; justify-content: center; margin-top: 20px;">
+            <button>Show</button>
+        </div>
+    </div>
+</body>
+
+<script>
+    const url = 'https://api.github.com/users/mallicksoumik1711'
+
+    // 1. create a xml object for http req
+    const xhr = new XMLHttpRequest()
+
+    // 2. send xml http request
+    xhr.open('GET', url)
+
+    // 2.1 see changing state
+    // console.log(xhr.readyState) //not tracking continously
+
+    let data //in global scope
+    // 2.2 see changing state continously
+    xhr.onreadystatechange = function() {       // here if you want the current context, then do not use arrow function. They do not have their own "this"
+        // console.log(xhr.readyState)
+        if(xhr.readyState === 4){
+            // console.log(typeof this.responseText)  // here it returns a string not an object. need to json parse
+            // console.log(typeof JSON.parse(this.responseText))
+            // console.log(JSON.parse(this.responseText.followers))  // this will also returns an undefined as the order on which its executing
+            // this.responseText is a string and string doesnot have .followers
+            // so hold this in a variable and then use
+            data = JSON.parse(this.responseText)
+            // console.log(data.followers)
+        }
+    }
+
+    // 3. now call open 
+    xhr.send()
+
+    // ---------------------------------------------------------------------------------------------------------------------------------------------------
+
+    const button = document.querySelector('button')
+
+    button.addEventListener('click', (e)=>{
+        document.querySelector('img').src = data.avatar_url
+        document.querySelector('.text').innerHTML = data.followers
+    }, false)
+
+    // console.log(document.querySelector('img').src)
+
+</script>
+
+</html>
