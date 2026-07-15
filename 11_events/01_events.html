@@ -79,10 +79,10 @@
 
 
 
-    const unordList = document.querySelector('.un-list')
-    unordList.addEventListener('click', (e) => {
-        
-    }, false)
+    document.querySelector('.ul-list').addEventListener( 'click', (e) => {
+        console.log(e.target.parentNode)
+        console.log(e.target.tagName)
+    }, false )
 
 </script>
 
