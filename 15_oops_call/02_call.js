@@ -1,4 +1,5 @@
 // call -> gives current context to another function
+// it was used before es6 before class syntax was introduced
 
 function SetName(name){
     this.name = name
@@ -25,6 +26,10 @@ function SetModel(model){
 function Car(model, color, plate){
 
     SetModel.call(this, model)  //syntax - takes a this as a parameter
+    
+    // this.model = model
+    // here you can access the model by this keyword
+    // but if you want to reuse the existing function inside another one. Then use call.
 
     this.color = color
     this.plate = plate
