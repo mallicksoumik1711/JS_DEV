@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <button id="blue">Blue</button>
+    <button id="red">Red</button>
+</body>
+
+<script>
+    // if we have more colors instead of manually doing each color we will do closure
+    function clickButton(color){
+        function changeColor(){
+            document.querySelector('body').style.backgroundColor = color
+        }
+        return changeColor
+    }
+
+    // document.getElementById('blue').onclick = clickButton('blue')
+    // document.getElementById('red').onclick = clickButton('red')
+
+    document.getElementById('blue').addEventListener('click', clickButton('blue'), false)
+    document.getElementById('red').addEventListener('click', clickButton('red'), false)
+
+    // use eventListener or onclick
+</script>
+
+</html>
