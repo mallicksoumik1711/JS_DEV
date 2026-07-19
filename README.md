@@ -29,7 +29,7 @@
             console.log(a)          reference error
 
 ## 2. can const object be modified?
-      yes actually, const prevents from readssigning the variable.
+      yes actually, const prevents from reassigning the variable.
       But won't make the object immutable.
       ex :- const user = {
                   num: 10
@@ -106,3 +106,42 @@
        - like regular functions, these dont have their own this
        - they inherit "this" from their surrounding (node env) or whereever the code is
        
+## 11. Hoisting and temporal dead zone
+       - js behaviour of moving declarations (not initilizations/assignment) to the top of their scope
+       - during execution phase
+       - var/let/const a this is declaration
+       - a = 10 is initilization 
+
+       console.log(a)
+       var a = 10
+       - this is accepted as a id hoisted
+       - i.e. decalred and initilized as undefined
+
+       console.log(a)
+       let/const a = 10
+       - this will throw error
+       - a is also hoisted but is uninitilized
+       this is k/a "Temporal dead zone"
+
+       Example
+
+       console.log(a); // undefined
+       var a = 10;
+
+       console.log(b); // ReferenceError Tdz
+       let/const b = 20;
+
+       hello(); // Hello
+       function hello() {
+            console.log("Hello");
+       }
+
+       greet(); // TypeError
+       var greet = function () {
+            console.log("Hi");
+       };
+
+       welcome(); // ReferenceError
+            const welcome = () => {
+            console.log("Welcome");
+       };
