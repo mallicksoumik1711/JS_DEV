@@ -68,7 +68,7 @@ for (const [key, value] in maap) {   // this also wont work :)
 
 
 
-// we cannot iterate OBJECTS in javascript by for of loop
+// we cannot iterate OBJECTS in javascript by for of loop //actually we can
 const users = {
     name: "soumik",
     email: "email.email.email", 
@@ -78,7 +78,16 @@ const users = {
 // for (const user of users) {
 //     // console.log(user);
 //     // this will give error as objects are not iteratable by for of
+//     // Object.entries(users) => iteratable
 // }
+
+for (const [key, value] of Object.entries(users)) {
+    // console.log(`${key} : ${value}`)
+}
+
+for (const i of Object.entries(users)) {
+    // console.log(i)  // gives every key value in array format
+}
 
 for (const i in users) {
     // console.log(`Hello my ${i} is ${users[i]}`)
