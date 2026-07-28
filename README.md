@@ -145,3 +145,7 @@
             const welcome = () => {
             console.log("Welcome");
        };
+
+## 12. Starvation in JS
+       starvation is a situation in js when multiple tasks are pushed inside High priority/micro task queue
+       here the task queue (Normal queue) won't get a chance to be executed.
