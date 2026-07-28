@@ -149,3 +149,45 @@
 ## 12. Starvation in JS
        starvation is a situation in js when multiple tasks are pushed inside High priority/micro task queue
        here the task queue (Normal queue) won't get a chance to be executed.
+
+## 13. Objects 
+       OBJECT LITERALS
+       const obj = {
+             name: "name",
+             email: "email"
+       }
+       - problem with object literals was they were not for blue print design.
+       - have to repeat same design for different objects
+       - manually add some properties if something was missing
+
+       FUNCTION CONSTRUCTOR
+       function Person(name, email){
+             this.name = name
+             this.email = email
+
+             this.getName = function(){
+                   log(this.name)
+             }
+       }
+       const obj = new Person("name", "email")
+       const obj2 = new Person("name", "email")
+       const obj3 = new Person("name", "email")
+
+       - this was used before es6
+       - after es6 it was class
+
+       CLASSES
+       - before es6 there was no class keyword. used function constructor
+       class Person{
+             constructor(name, email, password){
+                   this.name = name
+                   this.email = email
+                   this.password = password
+             }
+
+             getDetails(){
+                   log(this.name, this.email, this.password)
+             }
+       }
+       const obj = new Person("name", "email", "password")
+       obj.getDetails
