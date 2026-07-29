@@ -38,3 +38,32 @@ let str = "some value"
 // simply understand like str.__proto__ = String.prototype
 
 console.log(str.__proto__)
+
+// ------------------------------------------------------------------------------------------------------------------------
+
+const p1 = {
+    num1: "inside p1"
+}
+
+const p2 = {
+    num2: "inside p2",
+    __proto__: p1
+}
+
+const p3 = {
+    num3: "inside p3",
+    __proto__: p2
+}
+
+console.log(p3)
+
+// p3.__proto__ = p2.prototype
+// p2.__proto__ = p1.prototype
+// prototypal inheritance
+
+// difference in __proto__ and prototype
+
+// __proto__ are contained by the objects
+// prototype are contained by the base class
+
+// object.__proto__ : baseClass.prototype
