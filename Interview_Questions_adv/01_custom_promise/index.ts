@@ -10,12 +10,14 @@ type TPromiseExecutor<T, K> = (resolve: TPromiseResolve<T>, reject: TPromiseReje
 
 type TPromiseThenCallback<T> = (value: T | undefined) => void
 type TPromiseCatchCallback<T> = (reason: T | undefined) => void
+type TPromiseFinallyCallback = () => void
 
 class MyPromise<T, K> {
     private _state: PromiseState = PromiseState.PENDING 
 
     private _successCallbackHandlers: TPromiseThenCallback<T>[] = []
     private _failureCallbackHandlers: TPromiseCatchCallback<K>[] = []
+    private _finallyCallbackHandlers: TPromiseFinallyCallback | undefined = undefined
 
     private _value: T | undefined = undefined
     private _reason: K | undefined = undefined
@@ -43,14 +45,26 @@ class MyPromise<T, K> {
         return this
     }
 
+    public finally(handlerFunction: TPromiseFinallyCallback){
+        if(this._state !== PromiseState.PENDING){
+            return handlerFunction()
+        } else {
+            this._finallyCallbackHandlers = handlerFunction
+        }
+    }
+
     private _promiseResolver(value: T) {
         if (this._state === PromiseState.FULFILLED) {
             return
         }
         this._state = PromiseState.FULFILLED
+        this._value = value
         this._successCallbackHandlers.forEach((cb) => {
             cb(value)
         })
+        if(this._finallyCallbackHandlers){
+            this._finallyCallbackHandlers()
+        }
     }
 
     private _promiseRejector(reason: K) {
@@ -58,9 +72,13 @@ class MyPromise<T, K> {
             return
         }
         this._state = PromiseState.REJECTED
+        this._reason = reason
         this._failureCallbackHandlers.forEach((cb) => {
             cb(reason)
         })
+        if(this._finallyCallbackHandlers){
+            this._finallyCallbackHandlers()
+        }
     }
 }
 
@@ -79,3 +97,23 @@ timing()
 .catch((reason) => {
     console.log("Promise rejected", reason)
 })
+.finally(()=>{
+    console.log("Finally ruinbning")
+})
+
+// function runNow() {
+//     return new MyPromise<number, number>((res, rej) => {
+//         res(200)
+//     })
+// }
+
+// runNow()
+// .then((value)=>{
+//     console.log("Promise rsolved", value)
+// })
+// .catch((reason)=>{
+//     console.log("Promise rejected", reason)
+// })
+// .finally(()=>{
+//     console.log("Finally running")
+// })
