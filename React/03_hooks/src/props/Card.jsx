@@ -1,7 +1,7 @@
 
 // from dev ui
 
-function Card({imgUrl, heading, price}) {
+function Card({imgUrl, heading, price=1000}) {     // price = 100 when not passed from component call
     console.log(imgUrl, heading, price)
   return (
     <div
