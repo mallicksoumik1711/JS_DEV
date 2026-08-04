@@ -1,14 +1,16 @@
 import { useEffect, useState } from "react"
+import { useLoaderData } from "react-router-dom"
 
 function Github() {
-    const [data, setdata] = useState("")
-    useEffect(()=>{
-        fetch("https://api.github.com/users/mallicksoumik1711")
-        .then((response)=>{
-            return response.json()
-        })
-        .then((data)=>{return setdata(data)})
-    }, [])
+    const data = useLoaderData()
+    // const [data, setdata] = useState("")
+    // useEffect(()=>{
+    //     fetch("https://api.github.com/users/mallicksoumik1711")
+    //     .then((response)=>{
+    //         return response.json()
+    //     })
+    //     .then((data)=>{return setdata(data)})
+    // }, [])
     return(
         <>
         <h1>Github followers: {data.followers}</h1>
@@ -19,3 +21,8 @@ function Github() {
 }
 
 export default Github
+
+export const githubLoaderData = async () => {
+    const response = await fetch("https://api.github.com/users/mallicksoumik1711")
+    return response.json()
+}
