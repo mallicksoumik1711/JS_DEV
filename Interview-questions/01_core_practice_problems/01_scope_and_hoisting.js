@@ -20,7 +20,7 @@ const c = 10
 // let & const - block scope
 
 var d = 10
-function test(){
+function test() {
   // console.log(d)
   var d = 20
 }
@@ -58,7 +58,7 @@ let h = 10
 
 // be careful at this one. why and how is important
 // console.log(i)
-function testtest (){
+function testtest() {
   var i = 10
 }
 testtest()
@@ -87,7 +87,7 @@ testk();
 // function declaration and function expressions
 
 // console.log(l)
-function l(){
+function l() {
   return 10
 }
 
@@ -99,7 +99,7 @@ function testm() {
 
 
 // testn()
-var testn = function(){
+var testn = function () {
   console.log("Hello")
 }
 // let and const as well
@@ -111,3 +111,27 @@ var testo = () => {
 }
 
 
+// this one is IMPORTANT****************
+var p = 10
+function testp(){
+  // console.log(p)
+  if (false) {
+    var p = 20
+  }
+}
+testp()
+
+let q = 10
+function testq(){
+  // console.log(q)
+  if (false) {
+    let q = 20
+  }
+}
+testq()
+
+
+// this is weird
+console.log(r);
+var r = 10;
+function r() {}
