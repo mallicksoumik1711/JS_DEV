@@ -73,10 +73,41 @@ function testj() {
 
 var k = 10;
 function testk() {
-  console.log(k);
+  // console.log(k);
   var k = 20;
-  console.log(k);
+  // console.log(k);
 }
 testk();
+
+
+// -------------------------------------------------------------------------------------------------------------
+
+
+// functions hoisting
+// function declaration and function expressions
+
+// console.log(l)
+function l(){
+  return 10
+}
+
+
+// testm();
+function testm() {
+  console.log("Hello");
+}
+
+
+// testn()
+var testn = function(){
+  console.log("Hello")
+}
+// let and const as well
+
+
+// testo()
+var testo = () => {
+  console.log("Hello")
+}
 
 
