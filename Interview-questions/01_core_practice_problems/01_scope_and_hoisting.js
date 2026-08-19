@@ -26,6 +26,7 @@ function test(){
 }
 test()
 
+
 let e = 10             // same with const as well
 function testt() {
   // console.log(e)
@@ -33,11 +34,13 @@ function testt() {
 }
 testt()
 
+
 var f = 10
 function ttest() {
   // console.log(f)
 }
 ttest()
+
 
 var g = 10
 {
@@ -45,8 +48,35 @@ var g = 10
 }
 // console.log(g)
 
+
 let h = 10
 {
   let h = 20
 }
-console.log(h)
+// console.log(h)
+
+
+// be careful at this one. why and how is important
+// console.log(i)
+function testtest (){
+  var i = 10
+}
+testtest()
+
+
+var j = 10
+function testj() {
+  var j = 20
+}
+// console.log(j)
+
+
+var k = 10;
+function testk() {
+  console.log(k);
+  var k = 20;
+  console.log(k);
+}
+testk();
+
+
