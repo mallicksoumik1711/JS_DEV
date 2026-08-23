@@ -3,7 +3,7 @@ const numbers = [1, 2, 3, 4, 5, 6, 7, 8];
 // Expected result:
 // [2, 4, 6, 8]
 
-const evenNums = numbers.filter((num) => num%2==0)
+const evenNums = numbers.filter((num) => num % 2 == 0)
 // console.log(evenNums)
 
 // ---------------------------------------------------------------
@@ -13,7 +13,7 @@ const numbers2 = [1, 2, 3, 4, 5];
 // Expected result:
 // [1, 4, 9, 16, 25]
 
-const sqNums = numbers2.map((num) => num*num)
+const sqNums = numbers2.map((num) => num * num)
 // console.log(sqNums)
 
 const names = ["john", "alice", "bob"];
@@ -40,7 +40,7 @@ const numbers4 = [2, 3, 4, 5];
 // Expected result:
 // 120
 
-const prodNums = numbers4.reduce((total, num) => total*num, 100)
+const prodNums = numbers4.reduce((total, num) => total * num, 100)
 // last 100 sets the value of total initially
 // console.log(prodNums)
 
@@ -55,7 +55,7 @@ const nums = [1, 2, 3, 4, 5, 6];
 // Expected result:
 // [20, 40, 60]
 
-const ans = nums.filter((num) => num % 2 === 0).map((num) => num*10)
+const ans = nums.filter((num) => num % 2 === 0).map((num) => num * 10)
 // console.log(ans)
 
 
@@ -68,4 +68,17 @@ const nums2 = [5, 10, 15, 20, 25];
 // 60
 
 const ans2 = nums2.filter((num) => num > 10).reduce((total, num) => total + num);
-console.log(ans2)
+// console.log(ans2)
+
+
+
+const orders = [
+    { item: "Laptop", amount: 1000 },
+    { item: "Phone", amount: 500 },
+    { item: "Mouse", amount: 50 },
+    { item: "Keyboard", amount: 100 }
+];
+// Use reduce() to calculate the total amount of all orders.
+
+const totalAmount = orders.reduce((total, order) => total + order.amount, 0)
+console.log(totalAmount)
