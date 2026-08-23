@@ -81,4 +81,17 @@ const orders = [
 // Use reduce() to calculate the total amount of all orders.
 
 const totalAmount = orders.reduce((total, order) => total + order.amount, 0)
-console.log(totalAmount)
+// console.log(totalAmount)
+
+
+
+const users = [
+    { name: "John", active: true },
+    { name: "Alice", active: false },
+    { name: "Bob", active: true },
+    { name: "Sarah", active: false }
+];
+// Using filter() and map(), return the names of all active users.
+
+const activeUsers = users.filter((user) => user.active).map((user) => user.name)
+console.log(activeUsers)
