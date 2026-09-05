@@ -191,3 +191,7 @@
        }
        const obj = new Person("name", "email", "password")
        obj.getDetails
+
+## 14. Temporal Dead Zone
+       Time period between entering a scope and declaration of let and const.
+       During this time accessing them causes reference error as they are hoisted but uninitilized
